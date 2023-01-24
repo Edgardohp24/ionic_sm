@@ -14,25 +14,35 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   validation_message = {
     email: [
-      { type: "required", message: "El Email es Obligatorio" },
-      { type: "pattern", message: "Tu email no es valido" }
+      {type: "required", message: "EL CORREO ES OBLIGATORIO"},
+      {type: "pattern", message: "TU CORREO ES INVALIDO"}
+    ],
+
+    password: [
+      {type: "required", message: "LA CONTRASEÑA ES OBLIGATORIA"},
+      {type: "minLength", message: "El numero de caracteres es incorrecto"}
+    ],
+
+    number: [
+      {type: "required", message: "EL CELULAR ES OBLIGATORIO"},
+      {type: "maxLength", message: "El numero de celular es incorrecto"}
     ]
   }
 
   errorMessage: any;
 
   constructor(private formBuilder: FormBuilder, 
-    private auth: AuthenticateService, 
+    private authenticate: AuthenticateService,
     private navCtrl: NavController,
-    private storage: Storage
-    ) { 
+    private storage: Storage) { 
+
 
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
         "",
         Validators.compose([
           Validators.required,
-          Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+          Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")
         ])
       ),
       password: new FormControl(
@@ -41,22 +51,33 @@ export class LoginPage implements OnInit {
           Validators.required,
           Validators.minLength(5)
         ])
+      ),
+
+      number: new FormControl(
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.maxLength(10)
+        ])
       )
     });
   }
 
   ngOnInit() {
   }
-
-  loginUser(credentials: any) {
-    console.log(credentials);
-    this.auth.loginUser(credentials).then( res => {
-      this.errorMessage = "";
-      this.storage.set("isUserLoggedIn", true);
-      this.navCtrl.navigateForward("/menu/home");
-    }).catch(err => {
+  loginUser(Credentials: any){
+     console.log(Credentials);
+     this.authenticate.loginUser(Credentials).then( res => {
+      this.errorMessage ="";
+      this.storage.set("login",true);
+      this.navCtrl.navigateForward("/menu/home")
+     }).catch(err =>{
       this.errorMessage = err
-    });
-  }
+     })
+    }
 
+    goToRegister(){
+      this.navCtrl.navigateForward("/register")
+    }
+  
 }

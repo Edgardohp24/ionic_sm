@@ -1,35 +1,35 @@
-ion-content {
-    --background: blue;
-  }
-  
-  ion-slides {
-    background-color: red;
-    height: 100%;
-    max-width: 800px;
-    --bullet-background-active: red;
-  }
-  .swiper-slide {
-    display: block;
-    background-color: aquamarine;
-    padding: 20px 0px 20px 0px;
-  }
-  
-  ion-slide > h1,h2 {
-    color: var(--ion-color-primary);
-  }
-  
-  ion-slide > p {
-    font-style: italic;
-    font-size: 22px;
-    border: solid;
-    border-color: black;
-    padding: 20px 20px 20px 20px;
-    margin: 20px 20px 20px 20px;
-  }
-  
-  ion-slide > ion-icon[name="close"] {
-    float: right;
-    color: var(--the-best-color);
-    font-size: 40px;
-  }
+ion-slides{
+  height: 100%;
+  max-width: 900px;
+  justify-content:center;
+  align-items:center;
+  display: flex;
+ }
+ .swiper-slide{
+   display: block;
+   background-color:rgb(106, 116, 143);
+   margin: 5px 5px 5px 5px;
+   
+ }
+ 
+ ion-slide > h1,h2{
+  font-style:initial;
+  color: var(--color-blanco-claro);
+  padding: 5px 0px 5px 0px;
+ }
+ 
+ ion-slide > p{
+   font-style: initial;
+   font-size: 22px;
+   border: solid;
+   border-color: var(--color-blanco-claro);
+   padding: 5px 5px 5px 5px;
+   
+ }
+ 
+ ion-slide > ion-icon[name="close"]{
+   float: right;
+   color: rgb(228, 172, 172);
+   font-size: 50px;
+ }
   
