@@ -5,9 +5,8 @@
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content>
     <p class="ion-text-center ion-text-uppercase">hola soy el home</p>
-    <button class="ion-text-center ion-text-uppercase" ion-button (click)="goTointro()" >Ir a mi registro</button>
 
     <ion-slides [options]="slideOps">
         <ion-slide *ngFor="let author of authors">
@@ -17,4 +16,5 @@
             </ion-avatar>
         </ion-slide>
     </ion-slides>
+
 </ion-content>

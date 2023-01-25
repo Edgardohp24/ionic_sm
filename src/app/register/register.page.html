@@ -45,9 +45,9 @@
         <ion-label position="floating">Carrera</ion-label>
         <ion-select placeholder="Selecione su carrera" formControlName="career">
           <ion-select-option value="Ing sistemas">Ing sistemas</ion-select-option>
-          <ion-select-option value="Ing civil">Ing civil</ion-select-option>
-          <ion-select-option value="Ing industrial">Ing industrial</ion-select-option>
-          <ion-select-option value="Ing mecatronica">Ing mecatronica</ion-select-option>
+          <ion-select-option value="Ing civil">MEDICINA</ion-select-option>
+          <ion-select-option value="Ing industrial">Contaduria</ion-select-option>
+          <ion-select-option value="Ing mecatronica">Derecho</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>
@@ -62,10 +62,11 @@
       <ion-input placeholder="Ingresa tu contraseña" formControlName="password" type="password"></ion-input>
     </ion-item>
   
-    <ion-button 
+    <ion-button   color="danger"
   shape="round"
   type="submit">
     Registrarse
+    <ion-icon slot="end" name="star"></ion-icon>
   </ion-button>
   
   </form>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center ion-text-uppercase "> Bienvenido al registro </ion-title>
+    <ion-title class=" "> Bienvenido al registro </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -30,29 +30,17 @@
   </ng-container>
 </div>
 
-<ion-item fill="solid">
-  <ion-label  position="floating">Celular</ion-label>
-  <ion-input   formControlName="number"></ion-input>
-</ion-item>
 
-<div>
-  <ng-container *ngFor="let validation of validation_message.number">
-    <div *ngIf="(loginForm.get('number')?.hasError(validation.type) && loginForm.get('number')?.dirty)">
-      {{validation.message}}
-    </div>    
-  </ng-container>
-</div>
 
-<ion-button
-shape="round"
+<ion-button color="success"
 [disabled]="!loginForm.valid"
 type="submit">
- Ingresar
+INGRESAR
 </ion-button>
 
-<ion-button (click) ="goToRegister()" 
+<ion-button color="warning"(click) ="goToRegister()" 
 shape="round">
- REGRESAR
+REGRESAR
 </ion-button>
 
   </form>

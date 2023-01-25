@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { LibraryService } from '../services/library.service';
 
 @Component({
@@ -11,17 +10,12 @@ export class HomePage {
   authors: any;
 
   slideOps = {
-    initialSlide: 2,
-    slidesPerView: 4,
+    initialSlide: 1,
+    slidesPerView: 3,
     centeredSlides: true,
     speed: 400
   }
- 
-  constructor(private navCtrl: NavController, private libraryService: LibraryService) {}
- 
-  goTointro(){
-    this.navCtrl.navigateForward('/intro');
-  }
+  constructor(private libraryService: LibraryService) {}
 
   ionViewDidEnter(){
     this.libraryService.getAuthors().then( res => {
