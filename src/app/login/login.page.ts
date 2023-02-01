@@ -15,18 +15,15 @@ export class LoginPage implements OnInit {
   validation_message = {
     email: [
       {type: "required", message: "EL CORREO ES OBLIGATORIO"},
-      {type: "pattern", message: "TU CORREO ES INVALIDO"}
+      {type: "pattern", message: "CORREO ES INVALIDO"}
     ],
 
     password: [
       {type: "required", message: "LA CONTRASEÑA ES OBLIGATORIA"},
-      {type: "minLength", message: "El numero de caracteres es incorrecto"}
+      {type: "minLength", message: " numero de caracteres es incorrecto"}
     ],
 
-    number: [
-      {type: "required", message: "EL CELULAR ES OBLIGATORIO"},
-      {type: "maxLength", message: "El numero de celular es incorrecto"}
-    ]
+    
   }
 
   errorMessage: any;
@@ -53,13 +50,7 @@ export class LoginPage implements OnInit {
         ])
       ),
 
-      number: new FormControl(
-        "",
-        Validators.compose([
-          Validators.required,
-          Validators.maxLength(10)
-        ])
-      )
+      
     });
   }
 

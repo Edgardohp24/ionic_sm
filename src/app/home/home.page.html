@@ -10,9 +10,9 @@
 
     <ion-slides [options]="slideOps">
         <ion-slide *ngFor="let author of authors">
-            <ion-avatar>
-                <img src="{{author.avatar}}"/>
-                <span>{{author.first_name}}</span>
+            <ion-avatar (click)="showBooks(author)">
+                <img src="{{author.photo}}"/>
+                <span>{{author.name}}</span> 
             </ion-avatar>
         </ion-slide>
     </ion-slides>
