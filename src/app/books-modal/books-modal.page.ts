@@ -7,11 +7,10 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./books-modal.page.scss'],
 })
 export class BooksModalPage implements OnInit {
-  
-  author_name="";
 
+  author: any;
 
-  constructor(
+  constructor( 
     private navParams: NavParams,
     private modalController: ModalController
     ) { }
@@ -19,14 +18,11 @@ export class BooksModalPage implements OnInit {
   ngOnInit() {
   }
 
-    ionViewDidEnter(){
-      this.author_name = this.navParams.get("author");  
+  ionViewDidEnter() {
+    this.author = this.navParams.get("author");
+  }
 
-    }
-
-    closeModal(){
-      this.modalController.dismiss();
-    }
-
-
+  closeModal(){
+    this.modalController.dismiss();
+  }
 }

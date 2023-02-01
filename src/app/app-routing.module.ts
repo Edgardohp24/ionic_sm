@@ -28,6 +28,11 @@ const routes: Routes = [
     path: 'books-modal',
     loadChildren: () => import('./books-modal/books-modal.module').then( m => m.BooksModalPageModule)
   },
+  {
+    path: 'book-detail-modal',
+    loadChildren: () => import('./book-detail-modal/book-detail-modal.module').then( m => m.BookDetailModalPageModule)
+  },
+
   
 
 ];
