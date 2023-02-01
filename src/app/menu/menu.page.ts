@@ -22,5 +22,23 @@ export class MenuPage implements OnInit {
   logout(){
     this.navCtrl.navigateRoot("/login");
   }
+  goToAuthors(){
+    this.navCtrl.navigateRoot("/menu/authors");
+    this.menu.close();
+  }
+  
+  goToHome(){
+    this.navCtrl.navigateRoot("/menu/home");
+    this.menu.close();
+  }
+  goToBooks(){
+    this.navCtrl.navigateRoot("/menu/books");
+    this.menu.close();
+  }
+
+  goToMyFavorites(){
+    this.navCtrl.navigateRoot("/menu/favorite-books");
+    this.menu.close();
+  }
 
 }

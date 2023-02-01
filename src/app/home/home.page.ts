@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { MenuController, ModalController, NavController } from '@ionic/angular';
 import { LibraryService } from '../services/library.service';
 import { BooksModalPage } from '../books-modal/books-modal.page';
 
@@ -20,7 +20,9 @@ slideOps= {
 }
 constructor(
   private librabyService: LibraryService,
-  private modalController: ModalController
+  private modalController: ModalController,
+  private navCtrl:NavController,
+  private menu: MenuController
   ){}
 
 ionViewDidEnter(){
@@ -46,6 +48,19 @@ let books_list:any;
 
  }
 
+ goToAuthors(){
+  this.navCtrl.navigateRoot("/menu/authors");
+  this.menu.close();
+}
+goToBooks(){
+  this.navCtrl.navigateForward("/menu/books");
+  this.menu.close();
+}
+
+goToMyFavorites(){
+  this.navCtrl.navigateForward("/menu/favorite-books");
+  this.menu.close();
+}
 
 }
 
